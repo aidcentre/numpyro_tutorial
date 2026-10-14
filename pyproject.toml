@@ -1,0 +1,53 @@
+[project]
+name = "numpyro-tutorial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "arviz>=1.3.0",
+    "arviz-plots>=1.3.2",
+    "graphviz>=0.21",
+    "jax>=0.11.2",
+    "matplotlib>=3.11.2",
+    "networkx>=3.7",
+    "numpy>=2.5.3",
+    "numpyro>=0.22.0",
+    "scipy>=1.18.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipywidgets>=8.1.9",
+    "jupyterlab>=4.6.4",
+    "jupytext>=1.19.6",
+    "ruff>=0.16.10",
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "ANN401",
+    "COM812",
+    "CPY001",
+    "D",      # tutorial notebooks: docstrings not required
+    "E402",   # notebooks: imports follow markdown cells
+    "N803",   # math/ML convention: X, Y, D_X, D_H, D_Y, N
+    "N806",   # math/ML convention: X, Y, V/V0 (units vs dimensionless)
+    "S101",
+    "T201",
+    "T203",
+    "ERA001",
+    "PD010",
+]
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.flake8-import-conventions]
+[tool.ruff.lint.flake8-import-conventions.aliases]
+numpy = "np"
+pandas = "pd"
+
+# Statnett users: set URL to Artifactoy PyPI below
+# [tool.uv]
+# index-url = "https://<Artifactory URL>"
